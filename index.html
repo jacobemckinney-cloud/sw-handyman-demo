@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="S.W. Handyman provides handyman and lawn care services in Union City, Tennessee, with over 35 years of experience." />
+  <title>S.W. Handyman | Handyman & Lawn Care in Union City, TN</title>
+
+  <style>
+    :root {
+      --color-primary: #1f2933;
+      --color-primary-dark: #111827;
+      --color-accent: #c98a4a;
+      --color-background: #f4f1ec;
+      --color-surface: #ffffff;
+      --color-text: #1f2933;
+      --color-muted: #5f6c72;
+      --color-border: #ded8cf;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--color-background);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .eyebrow {
+      color: var(--color-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      color: var(--color-text);
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 4.75rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--color-muted);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--color-surface);
+      color: var(--color-primary);
+      border: 1px solid var(--color-border);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 247, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--color-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: var(--color-primary);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 88px 0 72px;
+      background:
+        linear-gradient(rgba(17, 24, 39, 0.78), rgba(17, 24, 39, 0.84)),
+        url('images/sw-handyman-van.jpeg') center/cover;
+      color: white;
+    }
+
+    .hero h1,
+    .hero p {
+      color: white;
+    }
+
+    .hero .eyebrow {
+      color: #f3d7b2;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 720px;
+    }
+
+    .hero-text .lead {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      max-width: 620px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 28px;
+      border: 1px solid var(--color-border);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      color: var(--color-muted);
+    }
+
+    .check {
+      color: var(--color-primary);
+      font-weight: 900;
+    }
+
+    /* Cards and grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      background: rgba(31, 79, 70, 0.1);
+      color: var(--color-primary);
+      border-radius: 14px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      min-height: 380px;
+      object-fit: cover;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      color: var(--color-muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+    }
+
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .stars {
+      color: var(--color-accent);
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    .testimonial-name {
+      color: var(--color-text);
+      font-weight: 800;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--color-primary);
+      color: white;
+      border-radius: 28px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .cta h2,
+    .cta p {
+      color: white;
+    }
+
+    .cta p {
+      opacity: 0.86;
+    }
+
+    .cta .btn-secondary {
+      color: var(--color-primary);
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .contact-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+
+    form {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--color-text);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      padding: 28px 0;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .hero-grid,
+      .grid-2,
+      .contact-wrap,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .hero {
+        padding: 64px 0 56px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img {
+        height: 240px;
+      }
+
+      .cta {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#top">S.W. Handyman</a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="mobile-menu-btn" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Union City, Tennessee</p>
+          <h1>Fast. Honest. Dependable.</h1>
+          <p class="lead">S.W. Handyman helps with home repairs, small projects, lawn care, and property maintenance. From custom woodwork to everyday fixes, Steve Wilson brings years of hands-on experience to the jobs local customers need done right.</p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="tel:+17317966969">Call Steve</a>
+            <a class="btn btn-secondary" href="#contact">Send a Message</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Business highlights">
+          <h3>Why customers call S.W. Handyman</h3>
+          <p>Experienced help for the small jobs, repairs, and outdoor work that need to get done.</p>
+          <ul>
+            <li><span class="check">✓</span><span>Over 35 years of experience</span></li>
+            <li><span class="check">✓</span><span>Handyman, repair, and lawn care services</span></li>
+            <li><span class="check">✓</span><span>Fast, honest, and reliable</span></li>
+            <li><span class="check">✓</span><span>Serving Union City and nearby areas</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">What we do</p>
+          <h2>Repairs, upgrades, lawn care, and small projects handled with care.</h2>
+          <p>S.W. Handyman is a good fit for homeowners and small businesses that need practical help without hiring a large contractor for every job.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="service-icon">1</div>
+            <h3>Handyman Repairs</h3>
+            <p>General repairs, maintenance tasks, and odd jobs around the home or property.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">2</div>
+            <h3>Lawn Care</h3>
+            <p>Mowing, trimming, cleanup, and basic outdoor maintenance for local properties.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">3</div>
+            <h3>Property Maintenance</h3>
+            <p>Ongoing help with the small jobs that keep a property safe, clean, and usable.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">4</div>
+            <h3>Small Construction</h3>
+            <p>Porches, trim, repairs, and other small building projects that need a skilled hand.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">5</div>
+            <h3>Interior Updates</h3>
+            <p>Help with simple interior improvements, repairs, fixtures, and finish work.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">6</div>
+            <h3>Custom Jobs</h3>
+            <p>Not sure if your project fits? Send a message and ask if S.W. Handyman can help.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container grid-2">
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2>Local handyman work with a clean, dependable look.</h2>
+          <p>S.W. Handyman, owned by Steve Wilson, serves customers in and around Union City, Tennessee. The work ranges from home repairs and lawn care to small construction, woodwork, and finish projects. The brand is simple: fast, honest, and dependable.</p>
+
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Clean, practical work for homes and businesses</span></li>
+            <li><span class="check">✓</span><span>Honest communication before the job begins</span></li>
+            <li><span class="check">✓</span><span>Dependable help for repairs, projects, and upkeep</span></li>
+          </ul>
+        </div>
+
+        <img class="about-image" src="images/sw-handyman-storefront.jpeg" alt="Custom wood awning and exterior work by S.W. Handyman" />
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Our work</p>
+          <h2>Recent project examples.</h2>
+          <p>Use this section to show real work, including exterior woodwork, interior updates, finish work, repairs, and lawn care jobs.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="images/sw-handyman-storefront.jpeg" alt="Exterior wood awning project by S.W. Handyman" />
+          <img src="images/sw-handyman-wood-ceiling.jpeg" alt="Wood ceiling and recessed lighting work by S.W. Handyman" />
+          <img src="images/sw-handyman-kitchen.jpeg" alt="Kitchen cabinet and finish project by S.W. Handyman" />
+          <img src="images/sw-handyman-interior-floor.jpeg" alt="Interior flooring and trim project by S.W. Handyman" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Reviews</p>
+          <h2>A simple standard: do the work right and treat people right.</h2>
+          <p>Until real customer reviews are added, this section can highlight the values shown on the van: fast, honest, and dependable.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p>Fast service matters when a repair or project has been sitting too long. S.W. Handyman helps customers move the job from “someday” to done.</p>
+            <p class="testimonial-name">Fast</p>
+          </article>
+
+          <article class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p>Honest communication helps customers know what to expect before the work begins. No complicated process, just clear help.</p>
+            <p class="testimonial-name">Honest</p>
+          </article>
+
+          <article class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p>Dependable work means showing up, listening to the customer, and taking care of the details that matter.</p>
+            <p class="testimonial-name">Dependable</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Ready to get started?</h2>
+            <p>Send a message today to ask about repairs, lawn care, small construction, or general maintenance work.</p>
+          </div>
+          <a class="btn btn-secondary" href="#contact">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Ask about your project.</h2>
+          <p>Send a few details about the project, and Steve can follow up about the best way to help.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <strong>Phone</strong>
+              <a href="tel:+17317966969">731-796-6969</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Email</strong>
+              <a href="mailto:fixinthings4you@gmail.com">fixinthings4you@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Service Area</strong>
+              <span>Union City, TN and nearby areas</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Facebook</strong>
+              <a href="#" target="_blank" rel="noopener">S.W. Handyman Facebook page</a>
+            </div>
+          </div>
+        </div>
+
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Phone or Email
+            <input type="text" name="contact" placeholder="How should we contact you?" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" placeholder="Tell us what you need help with" required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-note">You can replace this form with Google Forms, Formspree, or a direct email button if needed.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> S.W. Handyman. All rights reserved.</p>
+      <p>Website demo by Jacob McKinney</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
